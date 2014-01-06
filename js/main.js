@@ -5,7 +5,23 @@ var viewportHeight = $(window).height(),
 	navMenu = $('.navigation'),
 	revealer = $('#revealer'),
 	logo = $('.logo'),
-	footer = $('footer');
+	footer = $('footer'),
+	overlay = $('.overlay'),
+	loadingImg = overlay.find('img');
+
+(function(){
+	overlay.css({'height': viewportHeight});
+
+	loadingImg.css({'top': (viewportHeight/2 - (loadingImg.height()/2)), 'left': ($(window).width()/2 - (loadingImg.width()/2))});
+
+	$(window).bind("load", function() {
+   		setTimeout(function(){
+		overlay.fadeOut('slow');
+		}, 100);
+   	});
+
+
+}());
 
 // Determine viewport height and set the hero image and body content divs height based on result
 (function(){
