@@ -3,7 +3,7 @@
 	top: 0;
 	width: 100%;
 	height: inherit;
-	background-color: #232323;
+	background-color: #121212;
 	z-index: 100;
 	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
 
@@ -12,8 +12,14 @@
 		display: inline-block;
 	}
 
+	.home-btn img {transition: all 0.3s ease;}
+
+	.home-btn img:hover {
+		box-shadow: 0px 0px 6px 1px rgba(255,99,71,1);
+	}
+
 	.home-btn img:active {
-		box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.25);
+		box-shadow: 0px 0px 6px 1px rgba(214,35,35,1);
 	}
 
 	ul {
@@ -25,22 +31,95 @@
 		
 		li {
 			display: inline-block;
-			//margin: 0 1em;
 		}
 	}
 
 	.nav-links li{
 		margin: 0 1em;
+		transition: all 0.3s ease;
 
-		a {color: white; font-family: 'Signika' sans-serif; font-weight: bold;}
+		a {
+			color: white; 
+			font-family: 'Signika' sans-serif; 
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 0.025em;
+		}
 
-		&:hover {
-			text-shadow: 0px 0px 6px rgba(255,255,255,0.75);
+		&:hover, &:focus, &:active {
+			text-shadow: 0px 0px 10px rgba(255,255,255,1);
+		}		
+		
+		&:nth-child(2):hover{
+			text-shadow: 0px 0px 10px rgba(214,35,35,1);		
+		}
+
+		&:nth-child(3):hover{
+			text-shadow: 0px 0px 10px rgba(40,97,252,1);		
+		}
+
+		&:nth-child(4):hover{
+			text-shadow: 0px 0px 10px rgba(52,171,0,1);		
+		}
+
+		&:nth-child(5):hover{
+			text-shadow: 0px 0px 10px rgba(255,222,0,1);
 		}
 	}
 
+	.menu-icon {
+		position: absolute;
+		right: .5em;
+		top: .5em;
+	}
 
+	.mobile-nav-links {
+		width: 100%;
+		padding: 1em;
+		display: none;
+		box-shadow: none;
+		margin: 0;
+		
+		ul {
+			box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+		}
 
+		li {
+			display: block;
+			text-align: left;
+			margin: .75em 0;
+
+			a {
+			color: white; 
+			font-family: 'Signika' sans-serif; 
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 0.025em;
+			font-size: 2em;
+			transition: all 0.3s ease;
+		}
+
+		&:hover, &:focus, &:active {
+			text-shadow: 0px 0px 10px rgba(255,255,255,1);
+		}		
+			
+			&:nth-child(2):hover{
+				text-shadow: 0px 0px 10px rgba(214,35,35,1);		
+			}
+
+			&:nth-child(3):hover{
+				text-shadow: 0px 0px 10px rgba(40,97,252,1);		
+			}
+
+			&:nth-child(4):hover{
+				text-shadow: 0px 0px 10px rgba(52,171,0,1);		
+			}
+
+			&:nth-child(5):hover{
+				text-shadow: 0px 0px 10px rgba(255,222,0,1);
+			}
+		}
+	}	
 
 }
 
