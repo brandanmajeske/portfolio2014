@@ -9,30 +9,32 @@ var viewportHeight = $(window).height(),
 
 // Determine viewport height and set the hero image and body content divs height based on result
 (function(){
-	//viewportHeight -= 50;
+	viewportHeight -= 50;
 	hero.css({'height': viewportHeight});
 	//mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight});
-	//mainContent.css({'height' : viewportHeight + navMenu.height(),'top': viewportHeight});
-	if(mainContent.height() < viewportHeight) {
-	mainContent.css({'height' : viewportHeight + navMenu.height(),'top': viewportHeight - footer.height()});	
+	mainContent.css({'height' : 'inherit','top': viewportHeight});
+	
+	/*if(mainContent.height() < viewportHeight) {
+	mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight - footer.height()});	
 	} else {
-		mainContent.css({'height':'inherit','top': viewportHeight - footer.height()});
-	}
+	mainContent.css({'height':'inherit', 'top': viewportHeight - footer.height()});
+	}*/
+
 	logo.css({'height': viewportHeight/ 1.5, 'top': viewportHeight/8});
 	
 	//Reposition everything based on viewport height when window is resized
 	$(window).resize(function(){
 			viewportHeight = $(window).height();
 			hero.css({'height': viewportHeight});
-			//mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight - footer.height()});
-			logo.css({'height': viewportHeight/ 1.5, 'top': viewportHeight/8});
-
-
-			if(mainContent.height() < viewportHeight) {
+			mainContent.css({'height' : 'inherit','top': viewportHeight});
+	
+/*			if(mainContent.height() < viewportHeight) {
 			mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight - footer.height()});	
 			} else {
-				mainContent.css({'height':'inherit','top': viewportHeight - footer.height()});
-			}
+				mainContent.css({'height':'inherit'});
+			}*/
+			
+			logo.css({'height': viewportHeight/ 1.5, 'top': viewportHeight/8});
 	});
 
 
@@ -53,7 +55,7 @@ var viewportHeight = $(window).height(),
 	revealer.click(function(e){
 		e.preventDefault();
 		$('html,body').animate({
-			scrollTop: viewportHeight - (navMenu.height() + 45)
+			scrollTop: viewportHeight - navMenu.height()
 		}, 1400, 'easeInOutQuart');
 	});
 
