@@ -4897,6 +4897,10 @@ html, body {
     width: 10%;
     margin: 0 auto; }
 
+.content {
+  margin-top: 4em;
+  margin-bottom: 2em; }
+
 .main-content {
   position: absolute;
   width: 100%;
@@ -4921,6 +4925,13 @@ html, body {
   .main-content .panel {
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25); }
+
+.button {
+  background-color: #232323;
+  border-radius: 1px;
+  border: 1px solid #494949; }
+  .button:hover, .button:active, .button:focus {
+    background-color: #494949; }
 
 .navigation {
   position: fixed;
@@ -5016,6 +5027,42 @@ html, body {
     height: 0em;
     margin: 0 auto; }
 
+.skills-content h2, .skills-content h3 {
+  text-decoration: underline;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em; }
+.skills-content img {
+  width: 35%;
+  display: block;
+  margin: 0 auto; }
+.skills-content .panel {
+  padding-top: 1em;
+  min-height: 35em;
+  background-color: rgba(100, 100, 100, 0.025); }
+.skills-content .description_container {
+  padding: 1em; }
+
+.portfolio-content li {
+  position: relative; }
+
+.portfolio_caption {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  transition: opacity 0.7s ease;
+  opacity: 0;
+  padding: 1em;
+  width: 300px;
+  height: 300px; }
+  .portfolio_caption h3 {
+    color: #fff;
+    text-transform: uppercase; }
+  .portfolio_caption p {
+    margin: 0 auto;
+    color: #fff; }
+
 footer {
   position: fixed;
   bottom: 0;
@@ -5026,9 +5073,25 @@ footer {
   background-color: #fff;
   box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.5); }
   footer p {
+    display: block;
     font-size: .75em;
     font-family: 'Signika', sans-serif;
-    padding: .25em 0; }
+    padding: 0.25em 0; }
+  footer .socialmediaicons ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style-type: none;
+    text-align: center;
+    width: 10em;
+    margin: 0;
+    padding: 0; }
+  footer .socialmediaicons ul li {
+    display: inline-block;
+    margin: 0;
+    padding: 0; }
+    footer .socialmediaicons ul li img:hover {
+      box-shadow: 0px 0px 6px 1px rgba(40, 97, 252, 0.75); }
 
 /* * {
 	border: 3px solid red;

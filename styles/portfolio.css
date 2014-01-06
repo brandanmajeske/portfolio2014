@@ -1,0 +1,33 @@
+.portfolio-content h2 {
+  font-size: 4em;
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+  margin: 1em 0; }
+.portfolio-content li {
+  display: inline-block;
+  margin: 1em;
+  text-align: left;
+  position: relative; }
+
+.portfolio_caption {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 350px;
+  height: 320px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  transition: all 0.7s ease;
+  opacity: 0;
+  padding: 1em 0;
+  margin: 0 auto; }
+  .portfolio_caption h3 {
+    width: 80%;
+    margin: 1em auto;
+    color: #fff;
+    text-shadow: none;
+    text-transform: uppercase; }
+  .portfolio_caption p {
+    width: 80%;
+    margin: 0 auto;
+    color: #fff; }

@@ -1,7 +1,7 @@
 <footer>
 	<div class="row">
 		<div class="large-12 columns">
-			<p class="subheader">&copy; <span id="date"></span> &middot; Brandan Majeske</p>
+			<p class="subheader">&copy; <span id="date"></span> &middot; Brandan Majeske <span class="socialmediaicons"></span></p>
 		</div>
 	</div>
 </footer>

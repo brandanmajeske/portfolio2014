@@ -1,0 +1,32 @@
+[
+  {
+    "skill_name": "HTML &bull; HTML5",
+    "icon_url": "images\/skills\/html5.svg",
+    "description": "Hyper Text Markup Language; the language of the web. When I first became interested in the web, HTML seemed like a good place to start. HTML was simple yet did some pretty cool things to make websites interesting and usable. Images, elements, forms, etc., without it, even this site wouldn't be possible. HTML5 has come along now and HTML capabilities are growing."
+  },
+  {
+    "skill_name": "CSS &bull; CSS3",
+    "icon_url": "images\/skills\/css3.svg",
+    "description": "Cascading Style Sheets exist to help developers separate presentation code from the markup code, allowing for general layout, colors, and fonts. It's good practice to separate presentation code. We have greater control over the general characteristics like format patterns. Also it makes maintaining code much easier. I'm able to make changes with little effort."
+  },
+  {
+    "skill_name": "JavaScript",
+    "icon_url": "images\/skills\/js.svg",
+    "description": "If HTML is the markup-layer, and CSS is the presentation-layer, JavaScript can be described as the behavior-layer. JavaScript has been fun to learn. I really enjoy working with libraries like jQuery. With JavaScript I can make a website have more character. While CSS is improving in this area all the time, I feel that JavaScript will fill the 'behavior' role for some time."
+  },
+  {
+    "skill_name": "PHP",
+    "icon_url": "images\/skills\/php.svg",
+    "description": "PHP was my first server-side language. For my first project I built a horrible, nearly-unusable forum platform for a blog site that I had coded. This wasn't WordPress we're talking about either. That experience taught me a lot about PHP and started me on a long journey. Today I know a lot more about how to use PHP and I've really grown to like it and will continue to use it."
+  },
+  {
+    "skill_name": "MySQL",
+    "icon_url": "images\/skills\/mysql.svg",
+    "description": "MySQL is a relational database management system that I was introduced to along with PHP. It is widely used because of its free open-source status, and near-ubiquity on web servers. In my opinion PHP and MySQL are like peas and carrots. They go well together. I have extensive experience with setting up databases, migrating and maintaining them."
+  },
+  {
+    "skill_name": "ActionScript 3",
+    "icon_url": "images\/skills\/as3.svg",
+    "description": "ActionScript is an object-oriented language which is now owned by Adobe. It is a dialect of ECMAScript, which should look familiar if you know JavaScript. I've worked on a few projects with ActionScript on both Flash and AIR platforms. You can do some seriously cool things with ActionScript. I'm not afraid to say AS got a bum wrap when HTML5 showed up."
+  }
+]

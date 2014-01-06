@@ -12,6 +12,28 @@ var viewportHeight = $(window).height(),
 	loadingImg = overlay.find('img'),
 	copyrightDate = $('#date');
 
+var socialMedia = {
+	facebook : 'http://facebook.com/brandanmajeske',
+	twitter : 'http://twitter.com/brandanmajeske',
+	googleplus : 'https://plus.google.com/104486624241215576395/posts'
+}
+
+var social = function() {
+var output = '<ul>',
+	myList = document.querySelectorAll('.socialmediaicons');
+
+
+ for( var key in arguments[0] ) {
+ 	output += '<li><a href="' + socialMedia[key] + ' "target="_blank">' + 
+ 	'<img src="images/social/'+key+'.png" alt="icon for '+key+'">' +
+ 	'</a></li>';
+ 	}
+	output += '</ul>';
+	for (var i = myList.length -1; i >= 0; i--) {
+		myList[i].innerHTML = output;
+	}
+}(socialMedia);
+
 (function(){
 	overlay.css({'height': viewportHeight});
 
@@ -102,4 +124,117 @@ var viewportHeight = $(window).height(),
 	var d = new Date();
 	var n = d.getFullYear();
 	copyrightDate.html(n);
+}());
+
+(function() {
+	$.ajax({
+		type: 'GET',
+		cache: true,
+		url: 'data/skills.json',
+		dataType: 'json',
+		beforeSend: function(){
+			$('#update_skills').empty().append('<img src="images/loading.svg" />');
+		},
+		success: function (data){
+			$('#update_skills').empty();
+
+			var output = '<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">';
+				
+				$.each(data, function(key, val){
+					output += '<li class="panel">';
+					output += '<img src="'+val.icon_url+'"/>';
+					output += '<h3>'+val.skill_name+'</h3>';
+					output += '<div class="description_container">';
+					output += '<p>'+val.description+'</p>';
+					output += '</div>';
+					output += '</li>';
+				});
+
+			output += '</ul>';
+			$('#update_skills').html(output);
+		},
+		error: function(data){
+			console.log('error finding portfolio' + data);
+		}
+	});
+}());
+
+(function(){
+	$.ajax({
+			type: 'GET',
+			cache: true,
+			url: 'data/portfolio.json',
+			dataType: 'json',
+			success: function (data){
+				$('#update_portfolio').empty();
+
+				var output = '<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3">';
+					
+					$.each(data, function(key, val){
+						output += '<li class="portfolio_item">';
+						output += '<a href="'+val.project_url+'" target="_blank"><img src="'+val.image_url+'"/>';
+						output += '<div class="portfolio_caption">';
+						output += '<h3>'+val.name+'</h3>';
+						output += '<p>'+val.description+'</p>';
+						output += '</div>';
+						output += '</a></li>';
+					});
+
+				output += '</ul>';
+				$('#update_portfolio').html(output);
+			},
+			error: function(data){
+				console.log('error finding portfolio' + data);
+			}
+	});	
+}());
+
+// Portfolio items caption animation
+(function() {
+
+	$(window).bind("load", function() {
+	
+	setTimeout(function(){
+
+		var portfolio_item = $('.portfolio_item'),
+		image = portfolio_item.find('img'),
+		imageHeight = image.height(),
+		imageWidth =  image.width();
+
+		console.log(image)
+		console.log(imageWidth, imageHeight);
+		imageHeight = image.height(),
+		imageWidth =  image.width();
+
+			$(window).resize(function(){
+		imageHeight = image.height(),
+		imageWidth =  image.width();
+	});
+
+	$(document).on("mouseover", ".portfolio_item", function(e){
+		var that = $(this);	
+		that.find('.portfolio_caption').css({'opacity': 1, 'width': imageWidth, 'height': imageHeight});
+		e.preventDefault();
+	});
+
+	$(document).on("mouseout", ".portfolio_item", function(e){
+		var that = $(this);
+		that.find('.portfolio_caption').css('opacity', 0);
+	});
+
+
+	
+	}, 500);
+
+	if(Modernizr.touch){
+
+		setTimeout(function(){
+			$('.portfolio_caption').css('opacity', 0.7);
+		}, 1000);	
+	};
+
+
+   	}); // end window.bind-load
+
+	
 }());

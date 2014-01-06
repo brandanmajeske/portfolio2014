@@ -10,8 +10,8 @@
 <div class="row">
 	<div class="large-12 medium-12 small-12 columns">
 		<header>
-		<h2>Hey this is a header!</h2>
-		<h3 class="subheader">and this is a sub header below the header</h3>
+		<h2>Hello and welcome to my site!</h2>
+		<h3 class="subheader">Feel free to take a look around and see what I've been up to.</h3>
 		</header>
 
 <div class="wrapper">

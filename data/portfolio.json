@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Blood Brothers Guitars",
+    "image_url": "images\/portfolio\/bloodbroslogo.png",
+    "description": "Logo, Website Design and Development",
+    "project_url": "http://bloodbrothersguitars.com/"
+  },
+  {
+    "name": "FMD Search",
+    "image_url": "images\/portfolio\/fmd.png",
+    "description": "AJAX/PHP powered database search tool for Supervalu, Inc.",
+    "project_url": "http://brandanmajeske.com/fmd/"
+  },
+  {
+    "name": "Boise Systems",
+    "image_url": "images\/portfolio\/boisesystems.png",
+    "description": "Logo, Website Design and Development.",
+    "project_url": "http://boisesystems.com/"
+  },
+  {
+    "name": "e-Racer.net",
+    "image_url": "images\/portfolio\/eracer.png",
+    "description": "Web Development - Custom Wordpress Template - Full Sail University Project",
+    "project_url": "http://e-racer.net/"
+  },
+  {
+    "name": "PhotoGenic",
+    "image_url": "images\/portfolio\/photogenic.png",
+    "description": "Adobe AIR desktop application utilizing the Flickr API",
+    "project_url": "http://brandanmajeske.com/photogenic/"
+  },
+  {
+    "name": "Weather Tracker",
+    "image_url": "images\/portfolio\/weathertracker.png",
+    "description": "ActionScript3-based weather app utilizing the Yahoo Weather API ",
+    "project_url": "http://brandanmajeske.github.io/as3weatherapp/"
+
+  }
+]

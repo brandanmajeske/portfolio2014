@@ -1,0 +1,28 @@
+.portfolio-content {
+
+li {
+		position: relative;
+	}
+}
+
+.portfolio_caption {
+		background-color: rgba(0,0,0,0.8);
+		position: absolute;
+		top: 0;
+		transition: opacity 0.7s ease;
+		opacity: 0;
+		padding: 1em;
+		width: 300px;
+		height: 300px;
+
+		h3 {  
+			color: #fff;
+			text-transform: uppercase; 
+		}
+		
+		p {
+			margin: 0 auto;
+			color: #fff;
+		}
+	}
+
