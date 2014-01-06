@@ -4879,7 +4879,9 @@ th.hide-for-touch {
 	margin: 0 auto;
 } */
 html, body {
-  position: relative; }
+  background: white;
+  position: relative;
+  -webkit-font-smoothing: antialiased; }
 
 .overlay {
   position: fixed;
@@ -5024,8 +5026,9 @@ footer {
   background-color: #fff;
   box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.5); }
   footer p {
-    font-size: 1em;
-    font-family: 'Signika', sans-serif; }
+    font-size: .75em;
+    font-family: 'Signika', sans-serif;
+    padding: .25em 0; }
 
 /* * {
 	border: 3px solid red;

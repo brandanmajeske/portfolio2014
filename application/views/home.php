@@ -1,45 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="description" content="Brandan Majeske's Portfolio Website">
-	<title>Brandan Majeske &bull; Web Designer &amp; Developer</title>
-	<link rel="stylesheet" href="styles/screen.css"/>
-	<script src="js/modernizr.js"></script>
-</head>
-<body>
-<div class="overlay"><img src="images/loading.svg"></div></div>
-<div class="navigation hide-for-small-only">
-<div class="row">
-<div class="larg-12 columns">
-	<ul class="home-btn"><li><a href="index.html"><img src="images/homebtn.svg"</a></li></ul>
-	<ul class="nav-links">
-		<li><a href="#">work</a></li>
-		<li><a href="#">about</a></li>
-		<li><a href="#">blog</a></li>
-		<li><a href="#">contact</a></li>
-	</ul>
-</div>
-</div>
-</div>
-
-<div class="navigation show-for-small-only">
-<div class="row">
-<div class="larg-12 columns">
-	<ul class="home-btn"><li><a href="index.html"><img src="images/homebtn.svg"</a></li></ul>
-	<a id="mobile-nav-toggle" href="#" class="menu-icon" ><span></span></a>
-</div>
-	<ul class="mobile-nav-links">
-		<li><a href="#">work</a></li>
-		<li><a href="#">about</a></li>
-		<li><a href="#">blog</a></li>
-		<li><a href="#">contact</a></li>
-	</ul>
-
-</div>
-</div>
-
-
 <div class="hero">
 <img class="logo" src="images/logo.svg" />
 </div> <!-- end hero -->
@@ -79,35 +37,9 @@
 			<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis.</p>
 		</div>
 	</div>
-
 </div> <!-- end wrapper -->
-	
 	</div>
 </div>
 <!-- end Replace -->
-
-
-
 </div>
 <!-- end main-content -->
-
-
-<footer>
-	<div class="row">
-		<div class="large-12 columns">
-			<p class="subheader">&copy; <span id="date"></span> &middot; Brandan Majeske</p>
-		</div>
-	</div>
-</footer>
-
-
-<script src="js/jquery.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/foundation.min.js"></script>
-<script src="js/main.js"></script>
-
-<script>
-  $(document).foundation();
-</script>
-</body>
-</html>

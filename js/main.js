@@ -48,8 +48,10 @@ var viewportHeight = $(window).height(),
 
 
 			if(mainContent.height() < viewportHeight) {
-			mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight - footer.height()});	
+				console.log('main content is less');
+				mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight - footer.height()});	
 			} else {
+				console.log('main content is enough');
 				mainContent.css({'height':'inherit','top': viewportHeight - footer.height()});
 			}
 	});
