@@ -53,7 +53,7 @@ var viewportHeight = $(window).height(),
 	revealer.click(function(e){
 		e.preventDefault();
 		$('html,body').animate({
-			scrollTop: viewportHeight - (navMenu.height() + 45)
+			scrollTop: viewportHeight - (navMenu.height() + 35)
 		}, 1400, 'easeInOutQuart');
 	});
 
