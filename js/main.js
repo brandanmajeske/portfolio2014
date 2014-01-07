@@ -175,7 +175,7 @@ var output = '<ul>',
 						output += '<a href="'+val.project_url+'" target="_blank"><img src="'+val.image_url+'"/>';
 						output += '<div class="portfolio_caption">';
 						output += '<h3>'+val.name+'</h3>';
-						output += '<p>'+val.description+'</p>';
+						output += '<p class="hide-for-small-only">'+val.description+'</p>';
 						output += '</div>';
 						output += '</a></li>';
 					});
