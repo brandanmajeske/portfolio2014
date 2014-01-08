@@ -1,8 +1,9 @@
-/* .container {
-	width: 80%;
-	max-width: 960px;
-	margin: 0 auto;
-} */
+$orange: #ff6347;
+$blue: #2861FC;
+$green: #34AB00;
+$red: #D62323;
+$yellow: #FFDE00;
+
 
 html, body {
 background: white;
@@ -30,6 +31,16 @@ position: relative;
 .content {
 	margin-top: 4em;
 	margin-bottom: 2em;
+	padding-top: 3.625em;
+	a, a:visited { 
+	color: $blue;
+	text-decoration:none;
+	border-bottom: 1px dotted $blue;
+
+	&:hover, &:active {
+		color: darken($blue,20%);
+	}
+}
 }
 
 .main-content {
@@ -52,6 +63,7 @@ position: relative;
 	width: 100%;
 	height: inherit;
 	text-align: center;
+	a {border-bottom: none;}
 
 	}
 

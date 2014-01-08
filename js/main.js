@@ -7,6 +7,9 @@ var viewportHeight = $(window).height(),
 	navMenu = $('.navigation'),
 	revealer = $('#revealer'),
 	logo = $('.logo'),
+	workHeader = $('.work-header'),
+	workHeaderHeight = workHeader.height(),
+	workAnimation = $('#work-animation'),
 	footer = $('footer'),
 	overlay = $('.overlay'),
 	loadingImg = overlay.find('img'),
@@ -15,7 +18,9 @@ var viewportHeight = $(window).height(),
 var socialMedia = {
 	facebook : 'http://facebook.com/brandanmajeske',
 	twitter : 'http://twitter.com/brandanmajeske',
-	googleplus : 'https://plus.google.com/104486624241215576395/posts'
+	googleplus : 'https://plus.google.com/104486624241215576395',
+	github : 'https://github.com/brandanmajeske',
+	linkedin : 'http://www.linkedin.com/pub/brandan-majeske/2b/142/873'
 }
 
 var social = function() {
@@ -67,7 +72,14 @@ var output = '<ul>',
 			hero.css({'height': viewportHeight});
 			//mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight - footer.height()});
 			logo.css({'height': viewportHeight/ 1.5, 'top': viewportHeight/8});
+			
+			 if(workHeaderHeight < workAnimation.height() ) {
+			 	workHeader.css({'height': workAnimation.height()});
+			 } else {
+			 	workHeader.css({'height':'inherit'});
+			 }
 
+				
 
 			if(mainContent.height() < viewportHeight) {
 				console.log('main content is less');
@@ -105,6 +117,15 @@ var output = '<ul>',
 	      logo.fadeOut(300);
 	    } else {
 	      logo.fadeIn(300);
+	    }
+
+	    if($(this).scrollTop() > viewportHeight/7) {
+	    	workAnimation.fadeOut(300);
+	    	workHeader.css({'height':workAnimation.height()});
+	    }else {
+	    	workAnimation.fadeIn(300);
+	    	workHeader.css({'height':'inherit'});
+
 	    }
 	});
 }());

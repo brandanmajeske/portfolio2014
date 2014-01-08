@@ -4873,11 +4873,6 @@ th.hide-for-touch {
 .touch th.show-for-touch {
   display: table-cell !important; }
 
-/* .container {
-	width: 80%;
-	max-width: 960px;
-	margin: 0 auto;
-} */
 html, body {
   background: white;
   position: relative;
@@ -4899,7 +4894,14 @@ html, body {
 
 .content {
   margin-top: 4em;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  padding-top: 3.625em; }
+  .content a, .content a:visited {
+    color: #2861fc;
+    text-decoration: none;
+    border-bottom: 1px dotted #2861fc; }
+    .content a:hover, .content a:active, .content a:visited:hover, .content a:visited:active {
+      color: #0334bb; }
 
 .main-content {
   position: absolute;
@@ -4918,6 +4920,8 @@ html, body {
     width: 100%;
     height: inherit;
     text-align: center; }
+    .main-content .revealer a {
+      border-bottom: none; }
   .main-content .wrapper {
     display: block;
     overflow: auto;
@@ -4958,6 +4962,8 @@ html, body {
     float: right; }
     .navigation ul li {
       display: inline-block; }
+      .navigation ul li a {
+        border-bottom: none; }
   .navigation .nav-links li {
     margin: 0 1em;
     transition: all 0.3s ease; }
@@ -5025,10 +5031,11 @@ html, body {
     position: relative;
     display: block;
     height: 0em;
-    margin: 0 auto; }
+    margin: 0 auto;
+    width: 80%;
+    max-width: 960px; }
 
 .skills-content h2, .skills-content h3 {
-  text-decoration: underline;
   display: block;
   width: 100%;
   text-align: center;
@@ -5044,8 +5051,24 @@ html, body {
 .skills-content .description_container {
   padding: 1em; }
 
+.work-header {
+  background-color: #d62323; }
+  .work-header img {
+    display: block;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    z-index: 0; }
+
 .portfolio-content li {
   position: relative; }
+
+h2, h3 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: 300; }
 
 .portfolio_caption {
   background-color: rgba(0, 0, 0, 0.8);
@@ -5055,7 +5078,8 @@ html, body {
   opacity: 0;
   padding: 1em;
   width: 300px;
-  height: 300px; }
+  height: 300px;
+  text-align: center; }
   .portfolio_caption h3 {
     color: #fff;
     text-transform: uppercase; }
@@ -5068,7 +5092,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: inherit;
-  padding: 0;
+  padding: 0.313em 0 0 0;
   margin: 0;
   background-color: #fff;
   box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.5); }
@@ -5083,15 +5107,43 @@ footer {
     right: 0;
     list-style-type: none;
     text-align: center;
-    width: 10em;
+    width: inherit;
     margin: 0;
     padding: 0; }
   footer .socialmediaicons ul li {
     display: inline-block;
-    margin: 0;
-    padding: 0; }
-    footer .socialmediaicons ul li img:hover {
-      box-shadow: 0px 0px 6px 1px rgba(40, 97, 252, 0.75); }
+    margin: 0 0.156em;
+    padding: 0;
+    transition: all 0.3s ease;
+    width: 1.563em;
+    height: 1.563em;
+    overflow: hidden;
+    position: relative; }
+    footer .socialmediaicons ul li:last-child {
+      margin-right: 0; }
+    footer .socialmediaicons ul li img {
+      position: absolute;
+      top: -1.563em;
+      left: 0;
+      opacity: 0.25; }
+      footer .socialmediaicons ul li img:hover {
+        opacity: 1;
+        top: 0; }
+    footer .socialmediaicons ul li:hover:nth-child(1) {
+      box-shadow: 0px 0px 6px 1px rgba(40, 97, 252, 0.75);
+      background-color: rgba(40, 97, 252, 0.75); }
+    footer .socialmediaicons ul li:hover:nth-child(2) {
+      box-shadow: 0px 0px 6px 1px rgba(31, 157, 237, 0.75);
+      background-color: rgba(31, 157, 237, 0.75); }
+    footer .socialmediaicons ul li:hover:nth-child(3) {
+      box-shadow: 0px 0px 6px 1px rgba(214, 35, 35, 0.75);
+      background-color: rgba(214, 35, 35, 0.75); }
+    footer .socialmediaicons ul li:hover:nth-child(4) {
+      box-shadow: 0px 0px 6px 1px rgba(116, 198, 88, 0.75);
+      background-color: rgba(116, 198, 88, 0.75); }
+    footer .socialmediaicons ul li:hover:nth-child(5) {
+      box-shadow: 0px 0px 6px 1px rgba(25, 129, 186, 0.75);
+      background-color: rgba(25, 129, 186, 0.75); }
 
 /* * {
 	border: 3px solid red;
