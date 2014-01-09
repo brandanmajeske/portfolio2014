@@ -1,3 +1,6 @@
+<div class="about-header">
+<img id="portrait" src="<?php echo base_url(); ?>images/portrait.jpg" />
+</div>
 <div class="row about-content content">
 <div class="large-12 medium-12 small-12 columns">
     <h2>About Me...</h2>

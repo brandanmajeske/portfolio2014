@@ -7,9 +7,12 @@ var viewportHeight = $(window).height(),
 	navMenu = $('.navigation'),
 	revealer = $('#revealer'),
 	logo = $('.logo'),
+	panel = $('.panel'),
 	workHeader = $('.work-header'),
 	workHeaderHeight = workHeader.height(),
 	workAnimation = $('#work-animation'),
+	portrait = $('#portrait'),
+	aboutHeader = $('.about-header'),
 	footer = $('footer'),
 	overlay = $('.overlay'),
 	loadingImg = overlay.find('img'),
@@ -41,24 +44,58 @@ var output = '<ul>',
 
 (function(){
 	overlay.css({'height': viewportHeight});
-
-	loadingImg.css({'top': (viewportHeight/2 - (loadingImg.height()/2)), 'left': ($(window).width()/2 - (loadingImg.width()/2))});
-
+	
+	if(overlay.css({'display':'block'})){
+		
+	loadingImg.fadeIn(300).css({'top': (viewportHeight/2 - (loadingImg.height()/2)), 'left': ($(window).width()/2 - (loadingImg.width()/2))});
+		
+	}
+ 
 	$(window).bind("load", function() {
    		setTimeout(function(){
 		overlay.fadeOut('slow');
+		
+
 		}, 100);
-   	});
+
+
+	   	});
 
 
 }());
 
+var resizePanels = function(){
+
+			var panelHeight = [];
+			var winWidth = $(window).width();
+
+			if( (winWidth < 960) && (winWidth > 640)){
+
+				panel.each(function(){
+				var that = $(this);
+				panelHeight.push(that.outerHeight());
+				
+			});
+
+				console.log(panelHeight);
+				var biggestPanel = Math.max.apply(null,panelHeight);
+				console.log(biggestPanel);
+
+				panel.css({'min-height':biggestPanel});
+
+			}; // end if
+
+			if((winWidth < 636) || (winWidth > 1080)){
+				panel.css({'min-height':'inherit'});
+			}
+};
+resizePanels();
+
 // Determine viewport height and set the hero image and body content divs height based on result
 (function(){
-	//viewportHeight -= 50;
+
 	hero.css({'height': viewportHeight});
-	//mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight});
-	//mainContent.css({'height' : viewportHeight + navMenu.height(),'top': viewportHeight});
+
 	if(mainContent.height() < viewportHeight) {
 	mainContent.css({'height' : viewportHeight + navMenu.height(),'top': viewportHeight - footer.height()});	
 	} else {
@@ -70,22 +107,28 @@ var output = '<ul>',
 	$(window).resize(function(){
 			viewportHeight = $(window).height();
 			hero.css({'height': viewportHeight});
-			//mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight - footer.height()});
+			
 			logo.css({'height': viewportHeight/ 1.5, 'top': viewportHeight/8});
 			
+			//resize the home page panels
+			resizePanels();
+
+
+			//resize the work page header
+
 			 if(workHeaderHeight < workAnimation.height() ) {
 			 	workHeader.css({'height': workAnimation.height()});
 			 } else {
 			 	workHeader.css({'height':'inherit'});
 			 }
 
-				
+			
 
 			if(mainContent.height() < viewportHeight) {
-				console.log('main content is less');
+				
 				mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight - footer.height()});	
 			} else {
-				console.log('main content is enough');
+
 				mainContent.css({'height':'inherit','top': viewportHeight - footer.height()});
 			}
 	});
@@ -125,8 +168,18 @@ var output = '<ul>',
 	    }else {
 	    	workAnimation.fadeIn(300);
 	    	workHeader.css({'height':'inherit'});
-
 	    }
+
+	   	if($(this).scrollTop() > viewportHeight/7) {
+	    	portrait.fadeOut(300);
+	    	aboutHeader.css({'height':portrait.height()});
+	    }else {
+	    	portrait.fadeIn(300);
+	    	aboutHeader.css({'height':'inherit'});
+	    }
+
+
+
 	});
 }());
 
@@ -135,7 +188,7 @@ var output = '<ul>',
 	revealer.click(function(e){
 		e.preventDefault();
 		$('html,body').animate({
-			scrollTop: viewportHeight - (navMenu.height() + 25)
+			scrollTop: viewportHeight
 		}, 1400, 'easeInOutQuart');
 	});
 
@@ -222,12 +275,10 @@ var output = '<ul>',
 		imageHeight = image.height(),
 		imageWidth =  image.width();
 
-		console.log(image)
-		console.log(imageWidth, imageHeight);
 		imageHeight = image.height(),
 		imageWidth =  image.width();
 
-			$(window).resize(function(){
+	$(window).resize(function(){
 		imageHeight = image.height(),
 		imageWidth =  image.width();
 	});

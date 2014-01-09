@@ -1,34 +1,8 @@
 <div class="row contact-content content">
 <div class="large-12 columns">
-		
-		<h2>How to contact me:</h2>
-		<p>If you're interested in learning more about what I can do, or just want to say 'Hi', drop me a line!</p>
-		
-		<div class="contact_form">
-		<?php echo validation_errors(); ?>
 
-		<?php echo form_open('contact'); ?>
-		    <fieldset>
-		          <div class="form-group">
-		          <label for="name">Your Name:</label>
-		            <input type="text" class="form-control input-md" required name="name" placeholder="Enter your name..." value="<?php echo set_value('name'); ?>"/>
-		          </div>
-		          <div class="form-group">
-		          <label for="email">Your Email:</label>
-		           <input type="email" name="email" class="form-control input-md" required placeholder="name@email.com" />
-		          </div>
-		           <div class="clearfix"></div>
-		          <div class="form-group">
-		          <label for="message">Message:</label>
-		            <textarea type="text" rows="10" name="message" required class="form-control input-md"></textarea>
-		          </div>
-		          <input type="submit" value="Submit" class="button"/>
-		      </fieldset>
-
-		<?php echo form_close(); ?>
-
-		</div> <!-- end form -->
-		</div> <!-- end description -->
+<div class="typeform-widget" data-url="https://brandan.typeform.com/to/OsYu3A" data-text="Contact Me" style="width:100%;height:31.250em;"></div>
+<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
 
 </div>
 </div>

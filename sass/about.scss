@@ -1,3 +1,21 @@
+.about-header {
+	background:
+	rgba(211,67,40,1);
+/*    	radial-gradient(ellipse at bottom, rgba(0,0,0,0) 1%,rgba(0,0,0,0) 45%,rgba(0,0,0,0.35) 99%,rgba(0,0,0,0.5) 100%),
+   	rgba(211,67,40,1); */
+	
+	
+	width: 100%;
+	
+	img {
+		display: block;
+		width: 100%;
+		max-width: 960px;
+		margin: 0 auto;
+		z-index: 0;
+	}
+}
+
 .skills-content {
 	h2, h3 {
 		
@@ -16,6 +34,10 @@
 		padding-top: 1em;
 		min-height: 35em;
 		background-color: rgba(100,100,100,0.025);
+		
+		@media (max-width: 640px){
+			min-height: inherit;
+		}
 	}
 	.description_container {
 		padding: 1em;

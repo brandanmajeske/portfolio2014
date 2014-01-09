@@ -28,5 +28,20 @@
     "skill_name": "ActionScript 3",
     "icon_url": "images\/skills\/as3.svg",
     "description": "ActionScript is an object-oriented language which is now owned by Adobe. It is a dialect of ECMAScript, which should look familiar if you know JavaScript. I've worked on a few projects with ActionScript on both Flash and AIR platforms. You can do some seriously cool things with ActionScript. I'm not afraid to say AS got a bum wrap when HTML5 showed up."
+  },
+    {
+    "skill_name": "Responsive Web Design",
+    "icon_url": "images\/skills\/rwd.svg",
+    "description": "The mobile-age we live in has brought about new techniques for designers to master. In this era of multiple screen-sizes and widespread use of mobile devices, the argument for responsive design has grown strong. I have fully embraced the RWD philosophy because it makes sense in many cases, although it isn't a magic bullet to fix all problems with varying screen sizes."
+  },
+      {
+    "skill_name": "C# & ASP.NET",
+    "icon_url": "images\/skills\/csharp.svg",
+    "description": "In recent months I have spent a good deal of time learning C# and Microsoft's ASP.NET framework. I've long held the opinion that most Enterprise software is stale, boring and difficult to use. I aim to change that. I've found that I really enjoy working with Visual Studio and the .NET MVC framework. It is my goal this year to spend more time working and developing Enterprise-level solutions."
+  },
+      {
+    "skill_name": "MS SQL Server",
+    "icon_url": "images\/skills\/sql.svg",
+    "description": "Along with ASP .NET and Visual Studio, I have also spent time learning Microsoft's SQL Server. When used with Enterprise-level solutions, the MS SQL Server is a robust and powerful way to interact with data that can be used with .NET projects. I am looking forward to using this more in the coming months."
   }
 ]
