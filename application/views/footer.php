@@ -6,11 +6,14 @@
 	</div>
 </footer>
 
-
-<script src="js/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<!-- <script src="js/jquery.js"></script> -->
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/foundation.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/final-main.js"></script>
+<!-- <script src="js/main.min.js"></script> -->
+
+
 
 <script>
   $(document).foundation();

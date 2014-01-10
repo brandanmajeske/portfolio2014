@@ -17,12 +17,8 @@ var viewportHeight = $(window).height(),
 	overlay = $('.overlay'),
 	loadingImg = overlay.find('img'),
 	copyrightDate = $('#date'),
-	portfolio_item = $('.portfolio_item'),
-	image = portfolio_item.find('img'),
-	caption = $('.portfolio_caption'),
-	imageHeight = image.height(),
-	imageWidth =  image.width(),
-	rand = 1;
+	rand = 1,
+	iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
 
 var socialMedia = {
 	facebook : 'http://facebook.com/brandanmajeske',
@@ -56,16 +52,22 @@ var output = '<ul>',
 	loadingImg.fadeIn(300).css({'top': (viewportHeight/2 - (loadingImg.height()/2)), 'left': ($(window).width()/2 - (loadingImg.width()/2))});
 		
 	}
- 
-	$(window).bind("load", function() {
-   		setTimeout(function(){
-		overlay.fadeOut('slow');
 		
 
-		}, 100);
-
-
-	   	});
+	
+	
+	if(iOS){
+		setTimeout(function(){
+			overlay.fadeOut('slow');
+		}, 1000);
+	} else {
+		
+		$(window).bind("load", function() {
+	   		setTimeout(function(){
+			overlay.fadeOut('slow');
+			}, 100);
+		   	});
+	}
 
 
 }());
@@ -83,13 +85,12 @@ var resizePanels = function(){
 				
 			});
 
-				console.log(panelHeight);
+
 				var biggestPanel = Math.max.apply(null,panelHeight);
-				console.log(biggestPanel);
 
 				panel.css({'min-height':biggestPanel});
 
-			}; // end if
+			}; 
 
 			if((winWidth < 636) || (winWidth > 1080)){
 				panel.css({'min-height':'inherit'});
@@ -97,7 +98,7 @@ var resizePanels = function(){
 };
 resizePanels();
 
-// Determine viewport height and set the hero image and body content divs height based on result
+
 (function(){
 
 	hero.css({'height': viewportHeight});
@@ -108,19 +109,14 @@ resizePanels();
 		mainContent.css({'height':'inherit','top': viewportHeight - footer.height()});
 	}
 	logo.css({'height': viewportHeight/ 1.5, 'top': viewportHeight/8});
-	
-	//Reposition everything based on viewport height when window is resized
+
 	$(window).resize(function(){
 			viewportHeight = $(window).height();
 			hero.css({'height': viewportHeight});
 			
 			logo.css({'height': viewportHeight/ 1.5, 'top': viewportHeight/8});
 			
-			//resize the home page panels
 			resizePanels();
-
-
-			//resize the work page header
 
 			 if(workHeaderHeight < workAnimation.height() ) {
 			 	workHeader.css({'height': workAnimation.height()});
@@ -164,57 +160,38 @@ resizePanels();
 
 	$(window).scroll(function(){
 		if ($(this).scrollTop() > viewportHeight/5) {
-	      logo.fadeOut(300);
+	      logo.stop().animate({opacity: 0}, 300);
+	      workAnimation.stop().animate({opacity: 0}, 200);
 	    } else {
-	      logo.fadeIn(300);
+	      logo.stop().animate({opacity: 1}, 300);
+	      workAnimation.stop().animate({opacity: 1}, 200);
 	    }
 
-	   	/*if($(this).scrollTop() > viewportHeight/7) {
-	    	workAnimation.fadeOut(300);
-	    	workHeader.css({'height':workAnimation.height()});
-	    }else {
-	    	workAnimation.fadeIn(300);
-	    	workHeader.css({'height':'inherit'});
-	    }
-
-	   	if($(this).scrollTop() > viewportHeight/7) {
-	    	portrait.fadeOut(300);
-	    	aboutHeader.css({'height':portrait.height()});
-	    }else {
-	    	portrait.fadeIn(300);
-	    	aboutHeader.css({'height':'inherit'});
-	    }*/
-
-	    	console.log($(this).scrollTop());
 
 	    	if($(this).scrollTop() > aboutHeader.height()) {
-	    		console.log('you scrolled past the about header');
+
 			if(rand == 1 && $(this).scrollTop() > 300){
 				rand = 2;
 				portrait.attr('src', 'images/portrait'+rand+'.jpg');
 			}
-			console.log(rand);
-			portrait.animate({opacity: 0}, 100);
+	
+			portrait.stop().animate({opacity: 0}, 100);
 			aboutHeader.load(portrait);
-	    	//portrait.fadeOut(300);
-	    	//aboutHeader.css({'height':portrait.height()});
-			console.log(portrait.attr('src'));
+
+
 	    	}else {
-			
-			console.log(portrait.attr('src'));
-			portrait.animate({opacity: 1}, 200);
+
+			portrait.stop().animate({opacity: 1}, 200);
 				
 			if(rand == 2 && $(this).scrollTop() <= 10 ){
 				setTimeout(function(){
 					rand = 1;
 					portrait.attr('src', 'images/portrait'+rand+'.jpg');
 					aboutHeader.load(portrait);
-				}, 1000);
+				}, 500);
 				
 			}
-			console.log(rand);
-	    	//portrait.fadeIn(300);
-	    	//aboutHeader.css({'height':'inherit'});
+
 	    }
 
 
@@ -222,7 +199,7 @@ resizePanels();
 }());
 
 (function(){
-	// Revealer window scroll to top
+
 	revealer.click(function(e){
 		e.preventDefault();
 		$('html,body').animate({
@@ -298,7 +275,8 @@ resizePanels();
 			error: function(data){
 				console.log('error finding portfolio' + data);
 			}
-	});	
+	});
+
 }());
 
 (function(){
@@ -308,54 +286,51 @@ resizePanels();
 	        $(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
 	    });
 	}
+
 }());
 
-// Portfolio items caption animation
 (function() {
 
 	$(window).bind("load", function() {
 	
 	setTimeout(function(){
 
-		var portfolio_item = $('.portfolio_item'),
-		image = portfolio_item.find('img'),
-		imageHeight = image.height(),
-		imageWidth =  image.width();
+	var portfolio_item = $('.portfolio_item'),
+	image = portfolio_item.find('img'),
+	imageHeight = image.height(),
+	imageWidth =  image.width(),
+	caption = $('.portfolio_caption');
 
-		imageHeight = image.height(),
-		imageWidth =  image.width();
+	imageHeight = image.height(),
+	imageWidth =  image.width();
+
 
 	$(window).resize(function(){
 		imageHeight = image.height(),
 		imageWidth =  image.width();
 	});
 
-	$(document).on("mouseover", ".portfolio_item", function(e){
-		var that = $(this);	
-		that.find('.portfolio_caption').css({'opacity': 1, 'width': imageWidth, 'height': imageHeight});
-		e.preventDefault();
-	});
+	if(!Modernizr.touch){
 
-	$(document).on("mouseout", ".portfolio_item", function(e){
-		var that = $(this);
-		that.find('.portfolio_caption').css('opacity', 0);
-	});
+		$(document).on("mouseover", ".portfolio_item", function(e){
+			var that = $(this);	
+			that.find(caption).css({'opacity': 1, 'width': imageWidth, 'height': imageHeight});
+			e.preventDefault();
+		});
 
-
+		$(document).on("mouseout", ".portfolio_item", function(e){
+			var that = $(this);
+			that.find(caption).css('opacity', 0);
+		});
 	
+	} else {
+		caption.remove();
+	}
+
 	}, 500);
-
-
-
-	if(Modernizr.touch){
-
-		setTimeout(function(){
-			$('.portfolio_caption').css('opacity', 0.7);
-		}, 1000);	
-	};
-
-
-   	}); // end window.bind-load
-
 	
+
+   	});
+
+
 }());

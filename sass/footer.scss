@@ -52,10 +52,13 @@ footer {
 		}
 	}
 
-
+	&:hover {
+		box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+		background-color: rgba(0,0,0,0.75);
+	}
 
 	//facebook
-	&:hover:nth-child(1) {
+/* 	&:hover:nth-child(1) {
 		box-shadow: 0px 0px 6px 1px rgba(40,97,252,0.75);
 		background-color: rgba(40,97,252,0.75);
 	}
@@ -78,7 +81,7 @@ footer {
 	&:hover:nth-child(5) {
 		box-shadow: 0px 0px 6px 1px rgba(25,129,186,0.75);
 		background-color: rgba(25,129,186,0.75);
-		}
+		} */
 	}
 
 }

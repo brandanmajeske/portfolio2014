@@ -3,7 +3,9 @@ $orange: #ff6347;
 $blue: #2861FC;
 $green: #34AB00;
 $red: #D62323;
+$red-orange: #FE0000;
 $yellow: #FFDE00;
+$grey: #A1A1A1;
 
 
 html, body {
@@ -12,6 +14,10 @@ position: relative;
 -webkit-font-smoothing: antialiased;
 }
 
+svg { 
+  height: 100%;
+  width: 100%;
+}
 .overlay {
 	position: fixed;
 	display: block;
@@ -111,4 +117,8 @@ position: relative;
 	&:hover, &:active, &:focus {
 		background-color: lighten(#232323, 15%);
 	}
+}
+
+.home-work {
+	background-color: $grey;
 }
