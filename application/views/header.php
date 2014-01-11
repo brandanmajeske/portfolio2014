@@ -10,12 +10,12 @@
 </head>
 <body>
 
-<div class="overlay"><img src="<?php echo base_url(); ?>images/loading.svg"></div></div>
+<div class="overlay"><img src="<?php echo base_url(); ?>images/loading.svg"></div>
 
 <div class="navigation hide-for-small-only">
 <div class="row">
 <div class="larg-12 columns">
-	<ul class="home-btn"><li><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>images/homebtn.svg"</a></li></ul>
+	<ul class="home-btn"><li><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>images/homebtn.svg" /></a></li></ul>
 	<ul class="nav-links">
 		<li><a href="work">work</a></li>
 		<li><a href="about">about</a></li>
@@ -29,7 +29,7 @@
 <div class="navigation show-for-small-only">
 <div class="row">
 <div class="larg-12 columns">
-	<ul class="home-btn"><li><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>images/homebtn.svg"</a></li></ul>
+	<ul class="home-btn"><li><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>images/homebtn.svg" /></a></li></ul>
 	<a id="mobile-nav-toggle" href="#" class="menu-icon" ><span></span></a>
 </div>
 	<ul class="mobile-nav-links">

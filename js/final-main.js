@@ -52,21 +52,41 @@ var output = '<ul>',
 	loadingImg.fadeIn(300).css({'top': (viewportHeight/2 - (loadingImg.height()/2)), 'left': ($(window).width()/2 - (loadingImg.width()/2))});
 		
 	}
-		
+	
 
 	
-	
 	if(iOS){
-		setTimeout(function(){
-			overlay.fadeOut('slow');
-		}, 1000);
+	
+	   	setTimeout(function(){
+			//overlay.fadeOut('slow');
+			overlay.css({
+			'-webkit-transition': 'opacity 1s ease-in-out',
+	    	'-moz-transition': 'opacity 1s ease-in-out',
+	    	'-ms-transition': 'opacity 1s ease-in-out',
+	    	'-o-transition': 'opacity 1s ease-in-out',
+	     	'opacity': '0'
+			});
+			overlay.remove();
+			}, 1000);
+
+	
 	} else {
 		
-		$(window).bind("load", function() {
-	   		setTimeout(function(){
-			overlay.fadeOut('slow');
-			}, 100);
-		   	});
+	$(window).bind("load", function() {
+	   		
+	   	setTimeout(function(){
+	
+			overlay.css({
+			'-webkit-transition': 'opacity 1s ease-in-out',
+	    	'-moz-transition': 'opacity 1s ease-in-out',
+	    	'-ms-transition': 'opacity 1s ease-in-out',
+	    	'-o-transition': 'opacity 1s ease-in-out',
+	     	'opacity': '0'
+			});
+			overlay.remove();
+			}, 1200);
+		
+		});	
 	}
 
 
@@ -77,7 +97,7 @@ var resizePanels = function(){
 			var panelHeight = [];
 			var winWidth = $(window).width();
 
-			if( (winWidth < 960) && (winWidth > 640)){
+			if((winWidth > 640)){
 
 				panel.each(function(){
 				var that = $(this);
@@ -92,10 +112,11 @@ var resizePanels = function(){
 
 			}; 
 
-			if((winWidth < 636) || (winWidth > 1080)){
+			if(winWidth < 636){
 				panel.css({'min-height':'inherit'});
 			}
 };
+
 resizePanels();
 
 
@@ -181,7 +202,7 @@ resizePanels();
 
 	    	}else {
 
-			portrait.stop().animate({opacity: 1}, 200);
+			portrait.stop().animate({opacity: 1}, 0);
 				
 			if(rand == 2 && $(this).scrollTop() <= 10 ){
 				setTimeout(function(){
@@ -282,6 +303,18 @@ resizePanels();
 (function(){
 	if (!Modernizr.svg) {
 	    $('img[src$=".svg"]').each(function()
+	    {
+	        $(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
+	    });
+	}
+
+	function isIE () {
+  	var myNav = navigator.userAgent.toLowerCase();
+  	return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+	};
+
+	if( isIE() == true ){
+	$('img[src$=".svg"]').each(function()
 	    {
 	        $(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
 	    });

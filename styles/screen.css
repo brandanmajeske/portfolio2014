@@ -4878,10 +4878,6 @@ html, body {
   position: relative;
   -webkit-font-smoothing: antialiased; }
 
-svg {
-  height: 100%;
-  width: 100%; }
-
 .overlay {
   position: fixed;
   display: block;
@@ -5178,10 +5174,3 @@ footer {
     footer .socialmediaicons ul li:hover {
       box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.75);
       background-color: rgba(0, 0, 0, 0.75); }
-
-/* 
-* {
-	border: px solid red!important;
-	background-color: green!important;
-	color: blue!important;
-} */
