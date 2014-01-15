@@ -58,12 +58,11 @@ var output = '<ul>',
 	if(iOS){
 	
 	   	setTimeout(function(){
-			//overlay.fadeOut('slow');
 			overlay.css({
-			'-webkit-transition': 'opacity 1s ease-in-out',
-	    	'-moz-transition': 'opacity 1s ease-in-out',
-	    	'-ms-transition': 'opacity 1s ease-in-out',
-	    	'-o-transition': 'opacity 1s ease-in-out',
+			'-webkit-transition': 'opacity 3s ease-in-out',
+	    	'-moz-transition': 'opacity 3s ease-in-out',
+	    	'-ms-transition': 'opacity 3s ease-in-out',
+	    	'-o-transition': 'opacity 3s ease-in-out',
 	     	'opacity': '0'
 			});
 			overlay.remove();
@@ -145,8 +144,7 @@ resizePanels();
 			 	workHeader.css({'height':'inherit'});
 			 }
 
-			
-
+		
 			if(mainContent.height() < viewportHeight) {
 				
 				mainContent.css({'height' : viewportHeight + 50,'top': viewportHeight - footer.height()});	
@@ -209,12 +207,9 @@ resizePanels();
 					rand = 1;
 					portrait.attr('src', 'images/portrait'+rand+'.jpg');
 					aboutHeader.load(portrait);
-				}, 500);
-				
+				}, 500);	
 			}
-
 	    }
-
 
 	});
 }());
@@ -242,9 +237,6 @@ resizePanels();
 		cache: true,
 		url: 'data/skills.json',
 		dataType: 'json',
-		beforeSend: function(){
-			$('#update_skills').empty().append('<img src="images/loading.svg" />');
-		},
 		success: function (data){
 			$('#update_skills').empty();
 
@@ -252,7 +244,7 @@ resizePanels();
 				
 				$.each(data, function(key, val){
 					output += '<li class="panel">';
-					output += '<img src="'+val.icon_url+'"/>';
+					output += '<img src="'+val.icon_url+'" alt="'+val.skill_name+'"/>';
 					output += '<h3>'+val.skill_name+'</h3>';
 					output += '<div class="description_container">';
 					output += '<p>'+val.description+'</p>';
@@ -282,7 +274,7 @@ resizePanels();
 					
 					$.each(data, function(key, val){
 						output += '<li class="portfolio_item">';
-						output += '<a href="'+val.project_url+'" target="_blank"><img src="'+val.image_url+'"/>';
+						output += '<a href="'+val.project_url+'" target="_blank"><img alt="'+val.name+'" src="'+val.image_url+'"/>';
 						output += '<div class="portfolio_caption">';
 						output += '<h3>'+val.name+'</h3>';
 						output += '<p class="hide-for-small-only">'+val.description+'</p>';

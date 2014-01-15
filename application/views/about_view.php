@@ -1,5 +1,5 @@
 <div class="about-header">
-<img id="portrait" src="<?php echo base_url(); ?>images/portrait1.jpg" />
+<img alt="portrait" id="portrait" src="<?php echo base_url(); ?>images/portrait1.jpg" />
 </div>
 <div class="row about-content content">
 <div class="large-12 medium-12 small-12 columns">

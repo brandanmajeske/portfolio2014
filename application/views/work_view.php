@@ -1,6 +1,6 @@
 
 <div class="work-header">
-<img id="work-animation" src="<?php echo base_url(); ?>images/work.svg" />
+<img alt="work" id="work-animation" src="<?php echo base_url(); ?>images/work.svg" />
 </div>
 <div class="row work-content content">
 <div class="large-12 medium-12 small-12 columns">
